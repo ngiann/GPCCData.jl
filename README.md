@@ -16,9 +16,11 @@ PG2130099 |   9.7  |   1.3   |
 
 ---
 
+(new data have not been added to table above)
+
 ## Available functions
 
-The package exports three functions called listdatasets, readdataset and plotdataset.
+The package exports three functions called `listdatasets`, `readdataset` and `plotdataset`.
 
 ## Examples
 
