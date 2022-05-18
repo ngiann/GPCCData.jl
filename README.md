@@ -4,7 +4,7 @@ This package is registered with [AINJuliaRegistry](https://github.com/HITS-AIN/A
 Please add `AINJuliaRegistry` in order to use package.
 Install with `add GPCCVirialDatasets` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
 
-## Available datasets
+## Available datasets with reported delays
 
 |object   |  delay |  edelay |
 | ---     |  ---   |   ---   | 
@@ -16,9 +16,11 @@ PG2130099 |   9.7  |   1.3   |
 
 ---
 
+(new data have not been added to table above)
+
 ## Available functions
 
-The package exports three functions called listdatasets, readdataset and plotdataset.
+The package exports three functions called `listdatasets`, `readdataset` and `plotdataset`.
 
 ## Examples
 
