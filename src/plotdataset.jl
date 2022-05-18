@@ -1,3 +1,9 @@
+"""
+    plotdataset(; source = source)
+
+    Plot observed data.
+
+"""
 function plotdataset(; source = source)
 
   days, flux, stdflux = readdataset(source = source)
@@ -15,5 +21,5 @@ function plotdataset(; source = source)
   title(source)
 
   nothing
-  
+
 end
