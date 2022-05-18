@@ -7,7 +7,7 @@
 function readpgdataset(;source=source)
 
 
-    lcpath = joinpath(dirname(pathof(GPCCVirialDatasets)), "Data/PGData/")#"src/Data/"
+    lcpath = joinpath(dirname(pathof(GPCCData)), "Data/PGData/")#"src/Data/"
     filecon =  lcpath * source * "_con"
     fileHa  =  lcpath * source * "_ha"
     fileHb  =  lcpath * source * "_hb"

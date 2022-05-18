@@ -27,7 +27,7 @@ function readvirialdataset(;source=source)
         error("unknown source!")
     end
 
-    lcpath = joinpath(dirname(pathof(GPCCVirialDatasets)), "Data/Virial/")#"src/Data/"
+    lcpath = joinpath(dirname(pathof(GPCCData)), "Data/Virial/")#"src/Data/"
     dtabC =  lcpath * source * "Conti.txt"
     dtabL =  lcpath * source * "Hbeta.txt"
 
