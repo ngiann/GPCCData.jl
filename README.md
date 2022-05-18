@@ -4,7 +4,7 @@ This package is registered with [AINJuliaRegistry](https://github.com/HITS-AIN/A
 Please add `AINJuliaRegistry` in order to use package.
 Install with `add GPCCVirialDatasets` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
 
-## Available datasets
+## Available datasets with reported delays
 
 |object   |  delay |  edelay |
 | ---     |  ---   |   ---   | 
