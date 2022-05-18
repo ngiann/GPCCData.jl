@@ -1,57 +1,48 @@
 """
-    days, flux, stdflux, vel = readdataset(; source = source)
+    days, flux, stdflux = readpgdataset(; source = source)
 
-    Load observed data.
+    Load observed PG data.
 
 """
 function readpgdataset(;source=source)
 
+    @printf("Loading data for source %s\n", source)
 
-    lcpath = joinpath(dirname(pathof(GPCCData)), "Data/PGData/")#"src/Data/"
-    filecon =  lcpath * source * "_con"
-    fileHa  =  lcpath * source * "_ha"
-    fileHb  =  lcpath * source * "_hb"
-    fileHg  =  lcpath * source * "_hg"
+    lcpath = joinpath(dirname(pathof(GPCCData)), "Data/PGData/")
 
-    @printf("\t Loading data for source %s\n", source)
+    orderedfilenames = [lcpath * source * "_con",
+                        lcpath * source * "_ha",
+                        lcpath * source * "_hb",
+                        lcpath * source * "_hg"]
 
-    datacon = readdlm(filecon)[:, 1:3]
-    dataha  = readdlm(fileHa)[:, 1:3]
-    datahb  = readdlm(fileHb)[:, 1:3]
-    datahg  = readdlm(fileHg)[:, 1:3]
+    existingfilenames = filter(isfile, orderedfilenames)
 
-    daysCON = datacon[:,1]
-    flxCON  = datacon[:,2]
-    eflxCON = datacon[:,3]
+    aux = map(existingfilenames) do file
 
-    daysHA = dataha[:,1]
-    flxHA  = dataha[:,2]
-    eflxHA = dataha[:,3]
+        @printf("\t reading file %s\n", file)
 
-    daysHB = datahb[:,1]
-    flxHB  = datahb[:,2]
-    eflxHB = datahb[:,3]
+        local data = readdlm(file)[:, 1:3]
 
-    daysHG = datahg[:,1]
-    flxHG  = datahg[:,2]
-    eflxHG = datahg[:,3]
+        local time, flux, stdflux = data[:,1], data[:,2], data[:,3]
 
-    minMJD  = minimum([minimum(daysCON),minimum(daysHA),minimum(daysHB),minimum(daysHG)])
+        local minMJD = minimum(time)
 
-    daysCONmod = daysCON .- minMJD
-    daysHAmod  = daysHA  .- minMJD
-    daysHBmod  = daysHB  .- minMJD
-    daysHGmod  = daysHG  .- minMJD
+        local time₀ = time .- minMJD
 
-    # #bring data to rest-frame
-    # daysCONmod = daysCONmod./(z+1)
-    # daysHAmod = daysHAmod./(z+1)
+        time₀, flux, stdflux
 
-    days = [daysCONmod, daysHAmod, daysHBmod, daysHGmod]
-    flx  = [flxCON, flxHA, flxHB, flxHG]
-    eflx = [eflxCON, eflxHA, eflxHB, eflxHG]
+    end
 
-    return days, flx, eflx
+    # re-organise data in aux
 
+    L = length(aux)  # number of bands
+
+    @assert(L == length(existingfilenames)) # sanity check
+     
+    time    = [a[1] for a in aux]
+    flux    = [a[2] for a in aux]
+    stdflux = [a[3] for a in aux]
+
+    return time, flux, stdflux
 
 end

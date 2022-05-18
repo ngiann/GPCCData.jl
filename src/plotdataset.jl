@@ -1,19 +1,19 @@
 function plotdataset(; source = source)
 
-
   days, flux, stdflux = readdataset(source = source)
 
   figure()
 
-    for i in 1:length(days)
+  for i in 1:length(days)
 
-      errorbar(days[i], flux[i], yerr=stdflux[i], fmt="o", label=@sprintf("%d",i))
+    errorbar(days[i], flux[i], yerr=stdflux[i], fmt="o", label=@sprintf("%d",i))
 
-    end
+  end
 
-    legend()
+  legend()
 
-    title(source)
+  title(source)
 
-    nothing
+  nothing
+  
 end

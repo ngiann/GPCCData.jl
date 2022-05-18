@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux, vel = readvirialdataset(; source = source)
+    days, flux, stdflux = readvirialdataset(; source = source)
 
     Load observed data.
 
