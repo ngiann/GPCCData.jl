@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux = readpgdataset(; source = source)
+    days, flux, stdflux, bandfilename = readpgdataset(; source = source)
 
     Load observed PG data.
 
@@ -43,6 +43,6 @@ function readpgdataset(;source=source)
     flux    = [a[2] for a in aux]
     stdflux = [a[3] for a in aux]
 
-    return time, flux, stdflux
+    return time, flux, stdflux, existingfilenames
 
 end

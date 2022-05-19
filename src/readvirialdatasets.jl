@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux = readvirialdataset(; source = source)
+    days, flux, stdflux, bandfilename = readvirialdataset(; source = source)
 
     Load observed data.
 
@@ -60,7 +60,7 @@ function readvirialdataset(;source=source)
     flx  = [flxC,flxL]
     eflx = [eflxC,eflxL]
 
-    return days, flx, eflx #, V
+    return days, flx, eflx, [source * "Conti.txt", source * "Hbeta.txt"]
 
 
 end
