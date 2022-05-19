@@ -29,12 +29,13 @@ See a brief description in "help mode" with e.g. ?readdataset.
 using GPCCData
 using PyPlot # must be independently installed
 
-days, flux, stdflux, vel = readdataset(source="Mrk6")
+days, flux, stdflux, bandfilenames = readdataset(source="Mrk6")
 
 for i in 1:length(days)
   figure(i) ; cla()
-  errorbar(days[i], flux[i], yerr=stdflux[i], fmt="o")
+  errorbar(days[i], flux[i], yerr=stdflux[i], fmt="o", label=bandfilenames[i])
 end
+legend()
 ```
 
 Alternatively, can conveniently plot a dataset using e.g. `plotdataset(source = "Mrk6")`.
