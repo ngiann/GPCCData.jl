@@ -40,7 +40,7 @@ end
 legend()
 ```
 
-Alternatively, can conveniently plot a dataset using e.g. `plotdataset(source = "Mrk6")`.
+Alternatively, one can conveniently plot a dataset using e.g. `plotdataset(source = "Mrk6")`.
 
 To get a  list of the available datasets call `listdatasets()`.
 
