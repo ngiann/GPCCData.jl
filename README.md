@@ -31,10 +31,12 @@ using PyPlot # must be independently installed
 
 days, flux, stdflux, bandfilenames = readdataset(source="Mrk6")
 
+figure(1) ; cla()
+
 for i in 1:length(days)
-  figure(i) ; cla()
   errorbar(days[i], flux[i], yerr=stdflux[i], fmt="o", label=bandfilenames[i])
 end
+
 legend()
 ```
 
