@@ -11,9 +11,9 @@ function readpgdataset(;source=source)
     lcpath = joinpath(dirname(pathof(GPCCData)), "Data/PGData/")
 
     orderedfilenames = [lcpath * source * "_con",
-                        lcpath * source * "_ha",
+                        lcpath * source * "_hg",
                         lcpath * source * "_hb",
-                        lcpath * source * "_hg"]
+                        lcpath * source * "_ha"]
 
     existingfilenames = filter(isfile, orderedfilenames)
 
@@ -38,7 +38,7 @@ function readpgdataset(;source=source)
     L = length(aux)  # number of bands
 
     @assert(L == length(existingfilenames)) # sanity check
-     
+
     time    = [a[1] for a in aux]
     flux    = [a[2] for a in aux]
     stdflux = [a[3] for a in aux]
