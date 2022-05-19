@@ -2,7 +2,7 @@
 
 This package is registered with [AINJuliaRegistry](https://github.com/HITS-AIN/AINJuliaRegistry).
 Please add `AINJuliaRegistry` in order to use package.
-Install with `add GPCCVirialDatasets` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
+Install with `add GPCCData` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
 
 ## Available datasets with reported delays in literature
 
