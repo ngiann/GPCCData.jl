@@ -1,10 +1,13 @@
 # GPCCData
 
+
+## 💾 Installation 
+
 This package is registered with [AINJuliaRegistry](https://github.com/HITS-AIN/AINJuliaRegistry).
 Please add `AINJuliaRegistry` in order to use package.
 Install with `add GPCCData` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
 
-## Available datasets with reported delays in literature
+## ▶ Available datasets with reported delays in literature
 
 |object   |  delay |  edelay |
 | ---     |  ---   |   ---   | 
@@ -17,11 +20,11 @@ PG2130099 |   9.7  |   1.3   |
 
 (new data have not been added to table above)
 
-## Available functions
+## ▶ Available functions
 
 The package exports three functions called `listdatasets`, `readdataset` and `plotdataset`.
 
-## Examples
+## ▶ Examples
 
 See a brief description in "help mode" with e.g. ?readdataset.
 
