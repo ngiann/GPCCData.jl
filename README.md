@@ -1,4 +1,4 @@
-<h1 align="center">GPCC.jl</h1>
+<h1 align="center">GPCCData.jl</h1>
 
 
 ## 💾 Installation 
