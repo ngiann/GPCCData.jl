@@ -1,27 +1,21 @@
-# GPCCData
+<h1 align="center">GPCCData.jl</h1>
+
+
+## 💾 Installation 
 
 This package is registered with [AINJuliaRegistry](https://github.com/HITS-AIN/AINJuliaRegistry).
 Please add `AINJuliaRegistry` in order to use package.
-Install with `add GPCCVirialDatasets` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
+Install with `add GPCCData` in package mode once `AINJuliaRegistry` has been added to your Julia installation.
 
-## Available datasets with reported delays in literature
+## ▶ Available datasets
 
-|object   |  delay |  edelay |
-| ---     |  ---   |   ---   | 
-Mrk335	  |  14.0  |   0.9	 |
-Mrk1501   |  13.8  |   5.4   |
-3C120     |  25.6  |   2.4   | 
-Mrk6      |  10.2  |   1.2   |  
-PG2130099 |   9.7  |   1.3   |   
+3C120, Mrk335, Mrk1501, Mrk6, PG2130099, pg0026, pg0052, pg0804, pg0844, pg0953, pg1211, pg1226, pg1229, pg1307, pg1351, pg1411, pg1426, pg1613, pg1617, pg1700, pg1704, pg2130
 
-
-(new data have not been added to table above)
-
-## Available functions
+## ▶ Available functions
 
 The package exports three functions called `listdatasets`, `readdataset` and `plotdataset`.
 
-## Examples
+## ▶ Examples
 
 See a brief description in "help mode" with e.g. ?readdataset.
 
@@ -40,7 +34,7 @@ end
 legend()
 ```
 
-Alternatively, can conveniently plot a dataset using e.g. `plotdataset(source = "Mrk6")`.
+Alternatively, one can conveniently plot a dataset using e.g. `plotdataset(source = "Mrk6")`.
 
 To get a  list of the available datasets call `listdatasets()`.
 
