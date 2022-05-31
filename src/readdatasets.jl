@@ -14,6 +14,10 @@ function readdataset(;source=source)
 
         return readpgdataset(source = source)
 
+    elseif source in ["NGC5548"]
+
+        return readNGC5548dataset(source = source)
+
     else
 
         @printf("Argument source must be one of the following:\n")
