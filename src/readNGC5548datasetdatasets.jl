@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux, bandfilename = readNGC5548dataset(; source = source)
+    days, flux, stdflux, bandfilename, minimumtime = readNGC5548dataset(; source = source)
 
     Load observed NGC5548 data.
 
@@ -15,6 +15,20 @@ function readNGC5548dataset(;source=source)
 
     existingfilenames = filter(isfile, orderedfilenames)
 
+
+    # collect all times in order to find minimum
+    alltimes = map(existingfilenames) do file
+
+        @printf("\t reading file %s\n", file)
+
+        readdlm(file)[:, 1]
+
+    end
+
+    minMJD = minimum(minimum.(alltimes))
+
+    @printf("\t Minimum time is %f\n", minMJD)
+
     aux = map(existingfilenames) do file
 
         @printf("\t reading file %s\n", file)
@@ -22,8 +36,6 @@ function readNGC5548dataset(;source=source)
         local data = readdlm(file)[:, 1:3]
 
         local time, flux, stdflux = data[:,1], data[:,2], data[:,3]
-
-        local minMJD = minimum(time)
 
         local time₀ = time .- minMJD
 
@@ -41,6 +53,6 @@ function readNGC5548dataset(;source=source)
     flux    = [a[2] for a in aux]
     stdflux = [a[3] for a in aux]
 
-    return time, flux, stdflux, existingfilenames
+    return time, flux, stdflux, existingfilenames, minMJD
 
 end

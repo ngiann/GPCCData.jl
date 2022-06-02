@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux, bandfilename = readvirialdataset(; source = source)
+    days, flux, stdflux, bandfilename, minimumtime = readvirialdataset(; source = source)
 
     Load observed data.
 
@@ -49,6 +49,8 @@ function readvirialdataset(;source=source)
     daysT = [minimum(daysC),minimum(daysL)]
     minMJD = minimum(daysT)
 
+    @printf("\t Minimum time is %f\n", minMJD)
+
     daysCmod = daysC .- minMJD
     daysLmod = daysL .- minMJD
 
@@ -60,7 +62,7 @@ function readvirialdataset(;source=source)
     flx  = [flxC,flxL]
     eflx = [eflxC,eflxL]
 
-    return days, flx, eflx, [source * "Conti.txt", source * "Hbeta.txt"]
+    return days, flx, eflx, [source * "Conti.txt", source * "Hbeta.txt"], minMJD
 
 
 end
