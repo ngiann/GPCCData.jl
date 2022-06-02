@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux, bandfilename = readdataset(; source = source)
+    days, flux, stdflux, bandfilename, minimumtime = readdataset(; source = source)
 
     Load observed data.
 
