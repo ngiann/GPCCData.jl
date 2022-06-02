@@ -23,7 +23,7 @@ See a brief description in "help mode" with e.g. ?readdataset.
 using GPCCData
 using PyPlot # must be independently installed
 
-days, flux, stdflux, bandfilenames = readdataset(source="Mrk6")
+days, flux, stdflux, bandfilenames, minimumtime = readdataset(source="Mrk6")
 
 figure(1) ; cla()
 
