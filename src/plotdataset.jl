@@ -6,7 +6,7 @@
 """
 function plotdataset(; source = source)
 
-  days, flux, stdflux, bandfilename = readdataset(source = source)
+  days, flux, stdflux, bandfilename, = readdataset(source = source)
 
   figure()
 
