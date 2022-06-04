@@ -13,7 +13,7 @@ Install with `add GPCCData` in package mode once `AINJuliaRegistry` has been add
 
 ## ▶ Available functions
 
-The package exports three functions called `listdatasets`, `readdataset` and `plotdataset`.
+The package exports three functions called `listdatasets`, `listvirialdatasets`, `listpgdatasets`, `readdataset`, `plotdataset`.
 
 ## ▶ Examples
 
