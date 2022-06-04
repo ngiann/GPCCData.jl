@@ -14,6 +14,6 @@ module GPCCData
 
     include("readNGC5548datasetdatasets.jl")
 
-    export readdataset, listdatasets, plotdataset
+    export readdataset, listdatasets, plotdataset, listpgdatasets, listvirialdatasets
 
 end
