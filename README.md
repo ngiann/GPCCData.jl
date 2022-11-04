@@ -1,5 +1,9 @@
 <h1 align="center">GPCCData.jl</h1>
 
+## ℹ What is this?
+
+It is a julia package that allows convenient access to certain datasets.
+
 
 ## 💾 Installation 
 
