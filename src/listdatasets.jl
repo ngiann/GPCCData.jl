@@ -4,7 +4,7 @@
 """
 function listdatasets()
 
-  vcat(listvirialdatasets(), listpgdatasets(), "NGC5548")
+  vcat(listvirialdatasets(), listpgdatasets(), "NGC5548", "Mgc0811")
 
 end
 

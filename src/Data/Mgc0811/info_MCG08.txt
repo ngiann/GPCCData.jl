@@ -1,0 +1,26 @@
+The physical properties are:
+
+bhm  = 2.8e7
+eddington ratio = 5%
+
+The folder has two files: 
+MGC0811_opt.txt : Light curves for filters u,g,r,i,z with wavelenghts:
+u = 3600.0
+g = 4800.0
+r = 6300.0
+i = 7700.0
+z = 9100.0
+
+First column: Filters name
+Second column: Days
+Third column: fluxes
+Fourth column: error fluxes
+
+The second file: MGC0811_5100.txt has the light curve at one specific band called
+5100 with wavelength 5100.0
+
+First column: Days
+Second column: fluxes
+Third column: error fluxes
+
+This light curve is separated from the other because it is from another paper.
