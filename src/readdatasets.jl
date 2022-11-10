@@ -22,6 +22,10 @@ function readdataset(;source=source)
 
         return readMgc0811()
 
+    elseif source in ["ESO399-IG20", "ESO399_IG20"]
+
+        return readESO399_IG20()
+
     else
 
         @printf("Argument source must be one of the following:\n")
