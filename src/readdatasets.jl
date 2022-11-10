@@ -1,5 +1,5 @@
 """
-    days, flux, stdflux, bandfilename, minimumtime = readdataset(; source = source)
+    days, flux, stdflux, band_description, minimumtime = readdataset(; source = source)
 
     Load observed data.
 
@@ -17,6 +17,14 @@ function readdataset(;source=source)
     elseif source in ["NGC5548"]
 
         return readNGC5548dataset(source = source)
+
+    elseif source in ["Mgc0811"]
+
+        return readMgc0811()
+
+    elseif source in ["ESO399-IG20", "ESO399_IG20"]
+
+        return readESO399_IG20()
 
     else
 
