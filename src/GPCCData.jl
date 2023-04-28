@@ -14,6 +14,6 @@ module GPCCData
 
     include("Data/ESO399-IG20/readESO399_IG20.jl")
 
-    export readdataset, listdatasets, plotdataset, listpgdatasets, listvirialdatasets
+    export readdataset, listdatasets, plotdataset
 
 end
